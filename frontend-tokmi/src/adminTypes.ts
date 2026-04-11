@@ -45,8 +45,7 @@ export interface AdminUser {
 }
 
 // API helper
-const ADMIN_API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-
+const ADMIN_API = 'https://storiesapp-backend-production.up.railway.app/api';
 const adminFetch = async (path: string, options: RequestInit = {}) => {
   const token = localStorage.getItem('adminToken');
   const res = await fetch(`${ADMIN_API}/admin${path}`, {
